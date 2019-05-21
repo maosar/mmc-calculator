@@ -1,3 +1,10 @@
+// TODO: Break out into smaller components.
+// TODO: Add comments/documentation.
+// TODO: Update README.md
+// TODO: Add a header and footer.
+// TODO: Add loading animation before each calculation.
+
+
 import React from 'react';
 import {Card, CardDeck, Col, Container, Form, Row} from "react-bootstrap";
 
