@@ -4,7 +4,7 @@
 // TODO: Add a header and footer.
 // TODO: Add loading animation before each calculation.
 
-
+import Clock from './Clock'
 import React from 'react';
 import {Card, CardDeck, Col, Container, Form, Row} from "react-bootstrap";
 
@@ -19,6 +19,8 @@ class App extends React.Component {
     wq: '',
     w: '',
     l: '',
+    minutes: 30
+
   };
 
   handleLambdaChange = event => {
@@ -135,6 +137,7 @@ class App extends React.Component {
 
     return (
         <Container>
+          <Clock />
           <h1 className="display-1">M/M/C Calculator</h1>
           <hr/>
           <Form>
