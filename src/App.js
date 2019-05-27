@@ -137,8 +137,11 @@ class App extends React.Component {
 
     return (
         <Container>
+          <h1 className="display-3">Queue and service observation</h1>
+          <hr/>
           <Clock />
-          <h1 className="display-1">M/M/C Calculator</h1>
+          <hr/>
+          <h1 className="display-3">M/M/C Calculator</h1>
           <hr/>
           <Form>
             <Row>
