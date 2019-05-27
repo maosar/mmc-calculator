@@ -100,7 +100,7 @@ class Clock extends React.Component {
 			});
 			this.timerID = setInterval(
 				() => this.tick(),
-				100
+				1000
 			);
 		} else {
 			clearInterval(this.timerID);
