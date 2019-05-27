@@ -5,7 +5,7 @@ class Clock extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            timer: false,
+            isTimerRunning: false,
             seconds: 0,
             minutes: 0,
             customer: 0,
@@ -23,7 +23,7 @@ class Clock extends React.Component {
                 seconds: this.state.seconds + 1
             });
         } else {
-            this.setState(previousState => ({
+            this.setState({
                 seconds: 0,
                 minutes: this.state.minutes + 1,
                 customer: 0,
@@ -31,7 +31,7 @@ class Clock extends React.Component {
                     this.state.customerPerMinute,
                     [this.state.minutes + 1, this.state.customer]
                 ]
-            }))
+            })
         }
     }
 
@@ -39,11 +39,11 @@ class Clock extends React.Component {
         return (
             <div>
                 <Button
-                    className={!this.state.timer ? 'btn btn-success' : 'btn btn-danger'}
+                    className={!this.state.isTimerRunning ? 'btn btn-success' : 'btn btn-danger'}
                     onClick={() => {
                         this.handleTimerButton();
                     }}>
-                    {!this.state.timer ? 'Start timer' : 'Stop timer'}
+                    {!this.state.isTimerRunning ? 'Start timer' : 'Stop timer'}
                 </Button>
                 <span className={'display-1'}>
                     {this.state.minutes < 10 ? '0' + (this.state.minutes) : (this.state.minutes)}:{this.state.seconds < 10 ? '0' + (this.state.seconds) : (this.state.seconds)}
@@ -61,9 +61,9 @@ class Clock extends React.Component {
     }
 
     handleTimerButton() {
-        if (!this.state.timer) {
+        if (!this.state.isTimerRunning) {
             this.setState({
-                timer: true,
+                isTimerRunning: true,
             })
             this.timerID = setInterval(
                 () => this.tick(),
@@ -72,7 +72,7 @@ class Clock extends React.Component {
         } else {
             clearInterval(this.timerID);
             this.setState({
-                timer: false,
+                isTimerRunning: false,
                 seconds: 0,
                 minutes: 0
             })
