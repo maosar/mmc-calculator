@@ -9,6 +9,8 @@ class ServiceTable extends React.Component{
 			<tr id={key} key={key}><td>{item.startTime}</td><td>{item.stopTime}</td><td>{item.serviceTime}</td></tr>
 		);
 		return (
+			<div>
+				<h5>Service observations</h5>
 			<Table striped bordered size="sm">
 				<thead>
 				<tr><th>Start time</th><th>Stop time</th><th>Service time</th></tr>
@@ -17,6 +19,7 @@ class ServiceTable extends React.Component{
 				{items}
 				</tbody>
 			</Table>
+			</div>
 		)
 	}
 }
