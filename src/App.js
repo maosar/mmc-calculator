@@ -1,10 +1,10 @@
 // TODO: Break out into smaller components.
 // TODO: Add comments/documentation.
 // TODO: Update README.md
-// TODO: Add a header and footer.
+// TODO: Add a footer.
 // TODO: Add loading animation before each calculation.
 
-import Clock from './Clock';
+import Observation from './components/observation/Observation';
 import Header from './components/Header';
 import Home from "./components/Home";
 import About from "./components/About";
@@ -24,8 +24,7 @@ class App extends React.Component {
         lq: '',
         wq: '',
         w: '',
-        l: '',
-        minutes: 30
+        l: ''
 
     };
 
@@ -149,10 +148,10 @@ class App extends React.Component {
             <Container>
                 <Header/>
                 <Home/>
-
+                <About/>
                 <h2 id={'queueAndServiceObservation'}>Queue and service observation</h2>
                 <hr/>
-                <Clock/>
+                <Observation/>
                 <hr/>
                 <h2 id={'mmcCalculator'}>M/M/C Calculator</h2>
                 <hr/>
@@ -268,7 +267,6 @@ class App extends React.Component {
                     </Card>
                 </CardDeck>
                 <hr/>
-                <About/>
                 <Footer/>
             </Container>
         );

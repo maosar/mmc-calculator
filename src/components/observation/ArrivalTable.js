@@ -6,8 +6,7 @@ class ArrivalTable extends React.Component {
 
     render() {
 
-        const customerPerMinute = this.props.customerPerMinute;
-        const items = customerPerMinute.map((item, key) =>
+        const items = this.props.arrivalObservation.map((item, key) =>
             <tr id={key} key={key}>
                 <td>{item.minute}</td>
                 <td>{item.customers}</td>

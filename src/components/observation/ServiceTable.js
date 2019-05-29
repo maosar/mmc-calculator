@@ -4,8 +4,7 @@ import Table from "react-bootstrap/Table";
 class ServiceTable extends React.Component{
 
 	render(){
-		const serviceTime = this.props.serviceTime;
-		const items = serviceTime.map((item, key) =>
+		const items = this.props.serviceObservation.map((item, key) =>
 			<tr id={key} key={key}><td>{item.startTime}</td><td>{item.stopTime}</td><td>{item.serviceTime}</td></tr>
 		);
 		return (

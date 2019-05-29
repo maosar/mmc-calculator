@@ -31,8 +31,8 @@
     transform: rotate(360deg);
   }
 }
-h1, h2 {
-  padding-top: 6em;
+h1, h2  {
+  padding-top: 8em;
 }
 button{
   margin: 4px;
