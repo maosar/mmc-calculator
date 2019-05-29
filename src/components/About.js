@@ -24,7 +24,7 @@ class About extends React.Component {
                                     creates
                                     tables of data and can export it to .xlsl file format to be able to read it in Excel
                                     and do the proper arrival rate and service rate calculations there. The second part
-                                    is the M/M/C-Calculator where you can type in the arrival rate and service rate
+                                    is the M/M/C-Calculator where you can type in the arrival and service rate
                                     from your queue observation. It then calculates the P-value and other interesting
                                     values you can get from a queue observation!
                                 </p>

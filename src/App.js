@@ -3,6 +3,7 @@
 // TODO: Update README.md
 // TODO: Add a footer.
 // TODO: Add loading animation before each calculation.
+// TOFO: Make mobil friendly
 
 import Observation from './components/observation/Observation';
 import Header from './components/Header';
