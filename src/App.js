@@ -3,6 +3,7 @@
 // TODO: Update README.md
 // TODO: Add a header and footer.
 // TODO: Add loading animation before each calculation.
+// TOFO: Make mobil friendly
 
 import Clock from './Clock';
 import Header from './components/Header';
@@ -149,7 +150,7 @@ class App extends React.Component {
             <Container>
                 <Header/>
                 <Home/>
-
+                <About/>
                 <h2 id={'queueAndServiceObservation'}>Queue and service observation</h2>
                 <hr/>
                 <Clock/>
@@ -268,7 +269,6 @@ class App extends React.Component {
                     </Card>
                 </CardDeck>
                 <hr/>
-                <About/>
                 <Footer/>
             </Container>
         );
