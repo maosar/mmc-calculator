@@ -48,7 +48,7 @@ class Timer extends React.Component {
         this.props.setTimer(timer)
     }
 
-    static convertMS(milliseconds) {
+    convertMS(milliseconds) {
         var minute, seconds;
         seconds = Math.floor(milliseconds / 1000);
         minute = Math.floor(seconds / 60);
