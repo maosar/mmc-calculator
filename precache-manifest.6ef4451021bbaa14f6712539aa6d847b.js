@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0eb2c3fa14d10c3a06717b5cf0f84929",
+    "revision": "ddfbb4249f400dcf2d659356b503116a",
     "url": "/mmc-calculator/index.html"
   },
   {
-    "revision": "cb8ba8aaaf22bf9fe608",
+    "revision": "81ca4df558aae1039e1a",
     "url": "/mmc-calculator/static/css/main.b4c42164.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mmc-calculator/static/js/2.a6864543.chunk.js"
   },
   {
-    "revision": "cb8ba8aaaf22bf9fe608",
-    "url": "/mmc-calculator/static/js/main.4b5577d0.chunk.js"
+    "revision": "81ca4df558aae1039e1a",
+    "url": "/mmc-calculator/static/js/main.226a70e6.chunk.js"
   },
   {
     "revision": "dffb1f23ba6459fd8fee",
