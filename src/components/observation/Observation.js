@@ -107,8 +107,8 @@ class Observation extends React.Component {
                     </Col>
                     <Col md={4} className="text-center">
                         <h5>Actions</h5>
-                        <Download customerPerMinute={this.state.arrivalObservation.customerPerMinute}
-                                  serviceTime={this.state.serviceObservation}
+                        <Download arrivalObservation={this.state.arrivalObservation}
+                                  serviceObservation={this.state.serviceObservation}
                         />
                     </Col>
                 </Row>
