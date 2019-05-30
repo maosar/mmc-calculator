@@ -15,9 +15,9 @@ class Timer extends React.Component {
                 startTime: Date.now(),
                 seconds: this.props.timer.seconds,
                 minutes: this.props.timer.minutes
-            }
-            this.props.setIsObservationRunning(true)
-            this.props.setTimer(timer)
+            };
+            this.props.setIsObservationRunning(true);
+            this.props.setTimer(timer);
             this.timer = setInterval(
                 () => this.tick(),
                 1
@@ -29,39 +29,31 @@ class Timer extends React.Component {
                 startTime: 0,
                 seconds: 0,
                 minutes: 0
-            }
-            this.props.setIsObservationRunning(false)
+            };
+            this.props.setIsObservationRunning(false);
             this.props.setTimer(timer)
         }
     }
 
     tick() {
-        var millis = Date.now() - this.props.timer.startTime
-        var minutes = this.convertMS(millis).minute
-        var seconds = this.convertMS(millis).seconds
-        //console.log(minutes + ':' + seconds)
+        const millis = Date.now() - this.props.timer.startTime;
+        const minutes = this.convertMS(millis).minute;
+        const seconds = this.convertMS(millis).seconds;
         const timer = {
             isOn: true,
             startTime: this.props.timer.startTime,
-            seconds: (seconds === 60 ? 0 : seconds),
+            seconds: seconds,
             minutes: minutes
-
-        }
+        };
         this.props.setTimer(timer)
     }
 
-    convertMS(milliseconds) {
-        var day, hour, minute, seconds;
+    static convertMS(milliseconds) {
+        var minute, seconds;
         seconds = Math.floor(milliseconds / 1000);
         minute = Math.floor(seconds / 60);
         seconds = seconds % 60;
-        hour = Math.floor(minute / 60);
-        minute = minute % 60;
-        day = Math.floor(hour / 24);
-        hour = hour % 24;
         return {
-            day: day,
-            hour: hour,
             minute: minute,
             seconds: seconds
         };

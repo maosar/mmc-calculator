@@ -4,17 +4,25 @@ import Button from "react-bootstrap/Button";
 class ArrivalObservation extends React.Component {
     state = {
         arrivalObservation:{
-            minute: 1,
+            minute: 0,
             customers: 0
         }
-    }
+    };
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.timer.minutes !== this.props.timer.minutes && this.props.timer.minutes !== 0) {
-            this.props.addArrivalObservation(this.state.arrivalObservation)
+        if ((prevProps.timer.minutes !== this.props.timer.minutes && this.props.timer.minutes !== 0)) {
+            this.props.addArrivalObservation(this.state.arrivalObservation);
             this.setState({
                 arrivalObservation:{
-                    minute: this.state.arrivalObservation.minute + 1,
+                    minute: 0,
+                    customers: 0
+                }
+            })
+        }
+        if (prevProps.isObservationRunning && !this.props.isObservationRunning){
+            this.setState({
+                arrivalObservation:{
+                    minute: 0,
                     customers: 0
                 }
             })
@@ -23,7 +31,7 @@ class ArrivalObservation extends React.Component {
     handleAddCustomer() {
         this.setState({
             arrivalObservation:{
-                minute: this.state.arrivalObservation.minute,
+                minute: this.props.timer.minutes + 1,
                 customers: this.state.arrivalObservation.customers + 1
             }
         })

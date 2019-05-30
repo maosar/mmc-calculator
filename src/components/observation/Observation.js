@@ -52,13 +52,13 @@ class Observation extends React.Component {
 
     }
     addArrivalObservation(arrivalObservation){
-        const joined = this.state.arrivalObservation.concat(arrivalObservation)
+        const joined = this.state.arrivalObservation.concat(arrivalObservation);
         this.setState(  {
             arrivalObservation: joined
         })
     }
     addServiceObservation(serviceObservation){
-        const joined = this.state.serviceObservation.concat(serviceObservation)
+        const joined = this.state.serviceObservation.concat(serviceObservation);
         this.setState(  {
             serviceObservation: joined
         })
@@ -74,6 +74,7 @@ class Observation extends React.Component {
                                setIsObservationRunning={this.setIsObservationRunning}
                                timer={this.state.timer}
                                isObservationRunning={this.state.isObservationRunning}
+                               setState={this.setState}
                         />
                     </Col>
 

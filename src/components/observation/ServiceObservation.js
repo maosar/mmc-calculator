@@ -13,11 +13,27 @@ class ServiceObservation extends React.Component {
             stopTime: 0,
             serviceTime: 0
         }
-    }
+    };
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (!this.props.timer.isOn) {
-            clearInterval(this.serviceTimer);
+            clearInterval(this.timer);
+        }
+        if(prevProps.isObservationRunning && !this.props.isObservationRunning && this.state.timer.isOn){
+            this.setState({
+                timer: {
+                    isOn: false,
+                    startTime: 0,
+                    seconds: 0
+                },
+                serviceObservation: {
+                    startTime: this.state.serviceObservation.startTime,
+                    stopTime: (this.props.timer.minutes < 10 ? '0' + (this.props.timer.minutes) : (this.props.timer.minutes))+':'+(this.props.timer.seconds < 10 ? '0' + (this.props.timer.seconds) : (this.props.timer.seconds)),
+                    serviceTime: this.state.serviceObservation.serviceTime
+                }
+            }, ()=>{
+                this.props.addServiceObservation(this.state.serviceObservation)
+            })
         }
     }
 
@@ -34,7 +50,7 @@ class ServiceObservation extends React.Component {
                     stopTime: 0,
                     serviceTime: 0
                 }
-            })
+            });
             this.timer = setInterval(
                 () => this.tick(),
                 1
@@ -60,8 +76,8 @@ class ServiceObservation extends React.Component {
     }
 
     tick() {
-        var millis = Date.now() - this.state.timer.startTime
-        var seconds = Math.floor(millis / 1000)
+        var millis = Date.now() - this.state.timer.startTime;
+        var seconds = Math.floor(millis / 1000);
         this.setState({
             timer: {
                 isOn: true,
